@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 8 - Lógica Booleana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="h-screen flex items-center justify-center">
+        <form 
+            class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            id="meuForm">
+            <div class="mb-4">
+                <p class="block text-gray-700 text-sm font-bold mb-2">Escolha dois valores:</p>
+                <label class="inline-flex items-center">
+                    <input type="checkbox" id="valor1" class="form-checkbox">
+                    <span class="ml-2">Valor 1</span>
+                </label>
+            </div>
+             <div class="mb-6">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" id="valor2" class="form-checkbox">
+                    <span class="ml-2">Valor 2</span>
+                </label>
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Calcular Lógica">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("meuForm").addEventListener("submit", function (e){
+            e.preventDefault();
+
+            // Recupera os checkboxes
+            let valor1Input = document.getElementById("valor1");
+            let valor2Input = document.getElementById("valor2");
+            
+            // A propriedade 'checked' já retorna true ou false
+            let valor1 = valor1Input.checked;
+            let valor2 = valor2Input.checked;
+
+            // Calcula os operadores
+            let resultadoAnd = valor1 && valor2;
+            let resultadoOr = valor1 || valor2;
+            let resultadoNot1 = !valor1;
+
+            // Remove o formulário
+            document.getElementById("meuForm").remove();
+
+            // Adiciona o resultado na tela
+            document.getElementById("main").innerHTML = `
+            <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col'>
+                <h1 class='font-bold text-xl mb-3'>Resultados Lógicos</h1>
+                <p>Valor 1: <strong>${valor1}</strong> | Valor 2: <strong>${valor2}</strong></p>
+                <hr class="my-2 border-gray-400">
+                <p>Valor 1 AND Valor 2: <strong>${resultadoAnd}</strong></p>
+                <p>Valor 1 OR Valor 2: <strong>${resultadoOr}</strong></p>
+                <p>NOT Valor 1: <strong>${resultadoNot1}</strong></p>
+            </div>
+            `;
+        });
+    </script>
+</body>
+</html>

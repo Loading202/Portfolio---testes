@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão - Nome Completo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="h-screen flex items-center justify-center">
+        <form 
+            class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            id="meuForm">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="nome">
+                    Primeiro Nome
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text" name="nome" id="nome">
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="sobrenome">
+                    Sobrenome
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text" name="sobrenome" id="sobrenome">
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("meuForm").addEventListener("submit", function (e){
+            // Previne o comportamento padrão de recarregar a página
+            e.preventDefault();
+
+            // Recuperar os elementos de input do HTML
+            let nomeInput = document.getElementById("nome");
+            let sobrenomeInput = document.getElementById("sobrenome");
+            
+            // Acessa o conteúdo (valor) dos inputs
+            let nome = nomeInput.value;
+            let sobrenome = sobrenomeInput.value;
+            
+            // Junta o nome e o sobrenome
+            let nomeCompleto = nome + " " + sobrenome;
+
+            // Remove o formulário da tela
+            document.getElementById("meuForm").remove();
+
+            // Adiciona o novo conteúdo HTML com o resultado
+            document.getElementById("main").innerHTML = `
+            <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-center'>
+                <h1 class='font-bold text-xl'> 
+                    Bem-vindo, ${nomeCompleto}!
+                </h1>
+            </div>
+            `;
+        })
+    </script>
+</body>
+</html>

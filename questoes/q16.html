@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 16 - Adivinhe o Número</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="h-screen flex items-center justify-center">
+        <div id="container-jogo" class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form id="meuForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="palpite">
+                        Adivinhe o número (1 a 100)
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                    type="number" id="palpite" min="1" max="100" required>
+                </div>
+                
+                <div class="flex items-center justify-center">
+                    <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Adivinhar">
+                </div>
+            </form>
+            <p id="feedback" class="text-center font-bold mt-4"></p>
+        </div>
+    </div>
+
+    <script>
+        // Gera um número secreto fora do evento, para que ele não mude a cada clique
+        const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+        let tentativas = 0;
+
+        document.getElementById("meuForm").addEventListener("submit", function (e){
+            e.preventDefault();
+
+            // Recupera os elementos
+            let palpiteInput = document.getElementById("palpite");
+            let feedback = document.getElementById("feedback");
+            let palpite = parseInt(palpiteInput.value);
+            
+            tentativas++;
+
+            // Compara o palpite com o número secreto
+            if (palpite === numeroSecreto) {
+                // Remove o container do jogo inteiro
+                document.getElementById("container-jogo").remove();
+                // Mostra a mensagem de sucesso
+                document.getElementById("main").innerHTML = `
+                <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-center'>
+                    <h1 class='font-bold text-xl mb-3 text-green-600'>Parabéns, você acertou!</h1>
+                    <p>O número era <strong>${numeroSecreto}</strong>.</p>
+                    <p>Você precisou de <strong>${tentativas}</strong> tentativas.</p>
+                </div>
+                `;
+            } else if (palpite > numeroSecreto) {
+                feedback.textContent = "Muito alto! Tente um número menor.";
+                feedback.className = "text-center font-bold mt-4 text-red-600";
+            } else {
+                feedback.textContent = "Muito baixo! Tente um número maior.";
+                feedback.className = "text-center font-bold mt-4 text-blue-600";
+            }
+
+            // Limpa o campo de input para a próxima tentativa
+            palpiteInput.value = "";
+        });
+    </script>
+</body>
+</html>
