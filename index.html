@@ -1,34 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
+    <title>Portfólio de Atividades - Ítalo Dantas</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Minhas Questões:</h1>
-    <ul>
-        <li><a href="questoes/q1.html">Questão 1</a></li>
-        <li><a href="questoes/q2.html">Questão 2</a></li>
-        <li><a href="questoes/q3.html">Questão 3</a></li>
-        <li><a href="questoes/q4.html">Questão 4</a></li>
-        <li><a href="questoes/q5.html">Questão 5</a></li>
-        <li><a href="questoes/q6.html">Questão 6</a></li>
-        <li><a href="questoes/q7.html">Questão 7</a></li>
-        <li><a href="questoes/q8.html">Questão 8</a></li>
-        <li><a href="questoes/q9.html">Questão 9</a></li>
-        <li><a href="questoes/q10.html">Questão 10</a></li>
-        <li><a href="questoes/q11.html">Questão 11</a></li>
-        <li><a href="questoes/q12.html">Questão 12</a></li>
-        <li><a href="questoes/q13.html">Questão 13</a></li>
-        <li><a href="questoes/q14.html">Questão 14</a></li>
-        <li><a href="questoes/q15.html">Questão 15</a></li>
-        <li><a href="questoes/q16.html">Questão 16</a></li>
-        <li><a href="questoes/q17.html">Questão 17</a></li>
-        <li><a href="questoes/q18.html">Questão 18</a></li>
-        <li><a href="questoes/q19.html">Questão 19</a></li>
-        <li><a href="questoes/q20.html">Questão 20</a></li>
-    </ul>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <main class="container mx-auto max-w-5xl px-6 py-12">
+
+        <header class="flex flex-col md:flex-row items-center mb-16">
+            <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-8">
+                <img 
+                    class="w-40 h-40 rounded-full object-cover border-4 border-blue-500 shadow-lg" 
+                    src="italo.jpg" 
+                    alt="Foto de Perfil de Ítalo Dantas">
+                </div>
+            
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 pb-2">
+                    Ítalo Dantas
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mt-1">
+                    Aluno de Tecnologia em Sistemas para Internet (TSI)
+                </p>
+                <p class="text-gray-700 dark:text-gray-400 mt-4 max-w-lg">
+                    Este é o meu portfólio de atividades da disciplina.
+                </p>
+            </div>
+        </header>
+
+        <section>
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
+                Lista de Atividades
+            </h2>
+
+            <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <li><a href="questoes/q1.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 1</a></li>
+                <li><a href="questoes/q2.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 2</a></li>
+                <li><a href="questoes/q3.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 3</a></li>
+                <li><a href="questoes/q4.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 4</a></li>
+                <li><a href="questoes/q5.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 5</a></li>
+                <li><a href="questoes/q6.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 6</a></li>
+                <li><a href="questoes/q7.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 7</a></li>
+                <li><a href="questoes/q8.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 8</a></li>
+                <li><a href="questoes/q9.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 9</a></li>
+                <li><a href="questoes/q10.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 10</a></li>
+                <li><a href="questoes/q11.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 11</a></li>
+                <li><a href="questoes/q12.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 12</a></li>
+                <li><a href="questoes/q13.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 13</a></li>
+                <li><a href="questoes/q14.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 14</a></li>
+                <li><a href="questoes/q15.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 15</a></li>
+                <li><a href="questoes/q16.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 16</a></li>
+                <li><a href="questoes/q17.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 17</a></li>
+                <li><a href="questoes/q18.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 18</a></li>
+                <li><a href="questoes/q19.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 19</a></li>
+                <li><a href="questoes/q20.html" class="block bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center font-semibold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 transition-all duration-200 transform hover:-translate-y-1">Questão 20</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-gray-700 mt-12">
+        <div class="container mx-auto max-w-5xl px-6 py-6 text-center text-gray-500 dark:text-gray-400">
+            <p>&copy; 2025 Ítalo Dantas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
